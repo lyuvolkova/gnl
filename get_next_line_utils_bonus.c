@@ -1,4 +1,16 @@
-#include "get_next_line.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: qgrodd <qgrodd@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/08 20:09:26 by qgrodd            #+#    #+#             */
+/*   Updated: 2022/02/08 20:09:26 by qgrodd           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "get_next_line_bonus.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -28,6 +40,28 @@ size_t	ft_strlen(const char *s)
 	while (s[i])
 		i++;
 	return (i);
+}
+
+char	*ft_strdup(char *s1)
+{
+	int		len;
+	char	*s2;
+	int		i;
+
+	if (!s1 || *s1 == 0)
+		return (NULL);
+	len = ft_strlen(s1);
+	s2 = malloc(sizeof(*s2) * len + 1);
+	if (!s2)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+	{
+		s2[i] = s1[i];
+		i++;
+	}
+	s2[i] = '\0';
+	return (s2);
 }
 
 char	*ft_strjoin(char *s1, char *s2)

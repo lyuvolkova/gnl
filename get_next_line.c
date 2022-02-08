@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: qgrodd <qgrodd@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/08 20:09:38 by qgrodd            #+#    #+#             */
+/*   Updated: 2022/02/08 20:09:38 by qgrodd           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 void	new_ost(char **ostatok, char *line)
@@ -38,7 +50,7 @@ char	*check(char **ostatok, char *pointer)
 	return (tmp);
 }
 
-char 	*get_next_line(int fd)
+char	*get_next_line(int fd)
 {
 	static char	*ostatok;
 	char		*buffer;
@@ -65,21 +77,3 @@ char 	*get_next_line(int fd)
 	free(buffer);
 	return (check(&ostatok, pointer));
 }
-// int main()
-// {
-// 	int fd = open("gnlTester-master/files/nl", O_RDONLY);
-// 	char *line;
-// 	int i;
-// 	i = 0;
-// 	while((line = get_next_line(fd)))
-// 	{
-
-// 		printf("%s",line);
-// 	 	free(line);
-// 	}
-// 	//printf("i = %d %s\n", i, line);
-// 	//free(line);
-// 	// printf("%s\n", line);
-// 	//sleep(1000);
-// 	return(0);
-// }
